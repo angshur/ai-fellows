@@ -1,0 +1,274 @@
+const weeks = [
+  {
+    week: "Week 1",
+    title: "Follow the Money",
+    desc: "Pick a real company. Map how it makes money — who pays, what they pay for, and where the profit actually is.",
+    badge: "Business model",
+  },
+  {
+    week: "Week 2",
+    title: "Who Is the Customer, Really?",
+    desc: "Talk to real users. Write a customer research piece. Learn the difference between what people say they want and what they do.",
+    badge: "Customer thinking",
+  },
+  {
+    week: "Week 3",
+    title: "Who's Winning and Why",
+    desc: "Map a competitive landscape. Three companies, one market. Explain who is winning and why — not just what they do.",
+    badge: "Market analysis",
+  },
+  {
+    week: "Week 4",
+    title: "Build Something Real",
+    desc: "Create a tangible artifact — a working script, a dataset, a product concept. Something that lives on GitHub or your portfolio.",
+    badge: "Output",
+  },
+  {
+    week: "Week 5",
+    title: "The Memo",
+    desc: "Write a one-page business recommendation. Problem. Context. Options. Recommendation. Risk. No fluff.",
+    badge: "Executive communication",
+  },
+  {
+    week: "Week 6",
+    title: "Final Presentation",
+    desc: "Present a complete case study live. Business model, customer, market, your build, your recommendation. Published publicly.",
+    badge: "Synthesis",
+  },
+];
+
+const outcomes = [
+  {
+    number: "01",
+    title: "A public portfolio",
+    desc: "Five published pieces of original work on a personal website you own — not private assignments nobody reads.",
+  },
+  {
+    number: "02",
+    title: "Real work on GitHub",
+    desc: "Code, datasets, or structured research that demonstrates how you think, not just what you studied.",
+  },
+  {
+    number: "03",
+    title: "Industry mentor feedback",
+    desc: "Weekly 60-minute calls with a practitioner who reviews your work the way a manager would, not a professor.",
+  },
+  {
+    number: "04",
+    title: "AI Fellows Certificate",
+    desc: "A signed completion certificate from the Program Director. Something you can show and point to.",
+  },
+];
+
+export default function Home() {
+  return (
+    <>
+      <nav className="nav">
+        <span className="nav-logo">AI Fellows</span>
+        <div className="nav-links">
+          <a href="#program" className="nav-link">Program</a>
+          <a href="#mentor" className="nav-link">Mentor</a>
+          <a href="#apply" className="nav-link">Apply</a>
+          <a href="mailto:angshuman@ai-fellows.org" className="nav-cta">
+            Contact
+          </a>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <section className="hero">
+        <div className="section-inner">
+          <p className="hero-eyebrow">Cohort 1 — July 2026</p>
+          <p className="hero-provocation">
+            AI mentorship flows through 20 elite schools.<br />
+            Every other college gets left out of the pipeline.
+          </p>
+          <h1 className="hero-headline">
+            A 6-week industry fellowship<br />for the colleges that get skipped.
+          </h1>
+          <p className="hero-sub">
+            Real assignments. Real mentor feedback. A published portfolio and a
+            completion certificate — for ambitious students at state schools,
+            HBCUs, and regional universities who have never had access to
+            this kind of mentorship.
+          </p>
+          <div className="hero-actions">
+            <a href="#apply" className="btn-primary">Apply for Cohort 1</a>
+            <a href="#program" className="btn-secondary">See the program →</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Strip */}
+      <section className="strip">
+        <div className="section-inner">
+          <div className="strip-grid">
+            <div className="strip-item">
+              <span className="strip-label">The gap</span>
+              <span className="strip-text">
+                AI hiring pipelines cluster around the same 20 schools. Capable
+                students everywhere else have no structured access to industry
+                practitioners.
+              </span>
+            </div>
+            <div className="strip-divider" />
+            <div className="strip-item">
+              <span className="strip-label">The program</span>
+              <span className="strip-text">
+                Six weeks. One mentor. One real assignment per week. Weekly
+                60-minute calls. Everything you produce gets published publicly.
+              </span>
+            </div>
+            <div className="strip-divider" />
+            <div className="strip-item">
+              <span className="strip-label">The outcome</span>
+              <span className="strip-text">
+                Business fluency, a public portfolio, a GitHub with real work,
+                and a mentor relationship that outlasts the program.
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Program */}
+      <section className="section" id="program">
+        <div className="section-inner">
+          <div className="section-header">
+            <div>
+              <h2 className="section-title">The 6-Week Program</h2>
+              <p className="section-subtitle">
+                Project-based, not lecture-based. Every week builds one business
+                muscle and produces one artifact that goes on your public portfolio.
+              </p>
+            </div>
+          </div>
+          <div className="cards-grid">
+            {weeks.map((w) => (
+              <div key={w.week} className="card">
+                <div className="card-top">
+                  <span className="card-week">{w.week}</span>
+                  <span className="card-badge">{w.badge}</span>
+                </div>
+                <p className="card-title">{w.title}</p>
+                <p className="card-desc">{w.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Outcomes */}
+      <section className="section">
+        <div className="section-inner">
+          <div className="section-header">
+            <div>
+              <h2 className="section-title">What Fellows Get</h2>
+              <p className="section-subtitle">
+                Not a certificate from a platform. A body of public work and a
+                practitioner who knows your name.
+              </p>
+            </div>
+          </div>
+          <div className="outcomes-grid">
+            {outcomes.map((o) => (
+              <div key={o.number} className="outcome-item">
+                <p className="outcome-number">{o.number}</p>
+                <p className="outcome-title">{o.title}</p>
+                <p className="outcome-desc">{o.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mentor */}
+      <section className="section" id="mentor">
+        <div className="section-inner">
+          <div className="section-header">
+            <div>
+              <h2 className="section-title">The Mentor</h2>
+            </div>
+          </div>
+          <div className="mentor-block">
+            <div className="mentor-meta">
+              <p className="mentor-name">Angshuman Rudra</p>
+              <p className="mentor-title">
+                Director of Product, Data &amp; AI<br />
+                TapClicks
+              </p>
+              <div className="mentor-links">
+                <a
+                  href="https://linkedin.com/in/angshumanrudra"
+                  className="mentor-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn →
+                </a>
+                <a href="mailto:angshuman@ai-fellows.org" className="mentor-link">
+                  angshuman@ai-fellows.org
+                </a>
+              </div>
+            </div>
+            <div className="mentor-bio">
+              <p>
+                I have spent fifteen years working across engineering, product,
+                data, and AI — at enterprise SaaS companies, early-stage
+                startups, and consulting engagements. I know what companies
+                actually look for when they hire, what business decisions look
+                like from the inside, and what separates people who advance from
+                people who stall.
+              </p>
+              <p>
+                Most of that knowledge is not taught in school. It lives in
+                conversations between practitioners — the kind that happen at
+                elite schools because the connections are there, and don't happen
+                elsewhere because they aren't.
+              </p>
+              <p>
+                AI Fellows is my attempt to change that. Every week I review
+                your work the way a manager would. I tell you what's sharp, what
+                needs sharpening, and what a real business audience would think.
+                That feedback compounds.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Apply */}
+      <section className="apply-section" id="apply">
+        <div className="section-inner">
+          <div className="apply-inner">
+            <h2 className="apply-title">Apply for Cohort 1</h2>
+            <p className="apply-sub">
+              Cohort 1 starts July 7, 2026. Two spots. Remote. Free.
+              The only requirement is commitment — show up every week, do the
+              work, publish it.
+            </p>
+            <a href="mailto:angshuman@ai-fellows.org?subject=AI Fellows — Cohort 1 Application&body=Name:%0ACollege:%0AMajor and year:%0AWhy you want this:%0AWhat you want to learn:" className="btn-primary">
+              Send an application
+            </a>
+            <p className="apply-detail">
+              Email angshuman@ai-fellows.org with your name, college, major, year,
+              and one paragraph on why you want this. No resume required.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <div className="section-inner">
+          <div className="footer-inner">
+            <span className="footer-name">AI Fellows © 2026</span>
+            <a href="mailto:angshuman@ai-fellows.org" className="footer-email">
+              angshuman@ai-fellows.org
+            </a>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
+}
