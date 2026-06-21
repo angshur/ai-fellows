@@ -2,7 +2,7 @@ const weeks = [
   {
     week: "Week 1",
     title: "Follow the Money",
-    desc: "Pick a real company. Map how it makes money — who pays, what they pay for, and where the profit actually is.",
+    desc: "Pick a real company. Map how it makes money, who pays, what they pay for, and where the profit actually is.",
     badge: "Business model",
   },
   {
@@ -14,13 +14,13 @@ const weeks = [
   {
     week: "Week 3",
     title: "Who's Winning and Why",
-    desc: "Map a competitive landscape. Three companies, one market. Explain who is winning and why — not just what they do.",
+    desc: "Map a competitive landscape. Three companies, one market. Explain who is winning and why, not just what they do.",
     badge: "Market analysis",
   },
   {
     week: "Week 4",
     title: "Build Something Real",
-    desc: "Create a tangible artifact — a working script, a dataset, a product concept. Something that lives on GitHub or your portfolio.",
+    desc: "Create a tangible artifact: a working script, a dataset, a product concept. Something that lives on GitHub or your portfolio.",
     badge: "Output",
   },
   {
@@ -41,7 +41,7 @@ const outcomes = [
   {
     number: "01",
     title: "A public portfolio",
-    desc: "Five published pieces of original work on a personal website you own — not private assignments nobody reads.",
+    desc: "Five published pieces of original work on a personal website you own. Not private assignments nobody reads.",
   },
   {
     number: "02",
@@ -80,17 +80,16 @@ export default function Home() {
         <div className="section-inner">
           <p className="hero-eyebrow">Cohort 1 — July 2026</p>
           <p className="hero-provocation">
-            AI mentorship flows through 20 elite schools.<br />
-            Every other college gets left out of the pipeline.
+            Most students never get access to a practitioner who will<br />
+            sit with their work and tell them what is actually wrong with it.
           </p>
           <h1 className="hero-headline">
-            A 6-week industry fellowship<br />for the colleges that get skipped.
+            A 6-week industry fellowship<br />built around real work.
           </h1>
           <p className="hero-sub">
             Real assignments. Real mentor feedback. A published portfolio and a
-            completion certificate — for ambitious students at state schools,
-            HBCUs, and regional universities who have never had access to
-            this kind of mentorship.
+            completion certificate for ambitious students at state schools,
+            HBCUs, and regional universities.
           </p>
           <div className="hero-actions">
             <a href="#apply" className="btn-primary">Apply for Cohort 1</a>
@@ -106,9 +105,9 @@ export default function Home() {
             <div className="strip-item">
               <span className="strip-label">The gap</span>
               <span className="strip-text">
-                AI hiring pipelines cluster around the same 20 schools. Capable
-                students everywhere else have no structured access to industry
-                practitioners.
+                Most students graduate without ever having a practitioner
+                review their work, challenge their thinking, or explain how
+                business decisions actually get made.
               </span>
             </div>
             <div className="strip-divider" />
@@ -192,7 +191,7 @@ export default function Home() {
           </div>
           <div className="mentor-block">
             <div className="mentor-meta">
-              <p className="mentor-name">Angshuman Rudra</p>
+              <p className="mentor-name">Program Director</p>
               <p className="mentor-title">
                 Director of Product, Data &amp; AI<br />
                 TapClicks
@@ -213,24 +212,22 @@ export default function Home() {
             </div>
             <div className="mentor-bio">
               <p>
-                I have spent fifteen years working across engineering, product,
-                data, and AI — at enterprise SaaS companies, early-stage
-                startups, and consulting engagements. I know what companies
-                actually look for when they hire, what business decisions look
-                like from the inside, and what separates people who advance from
-                people who stall.
+                Fifteen years working across engineering, product, data, and AI
+                at enterprise SaaS companies, early-stage startups, and
+                consulting engagements. I know what companies look for when
+                they hire, what business decisions look like from the inside,
+                and what separates people who advance from people who stall.
               </p>
               <p>
                 Most of that knowledge is not taught in school. It lives in
-                conversations between practitioners — the kind that happen at
-                elite schools because the connections are there, and don't happen
-                elsewhere because they aren't.
+                conversations between practitioners, the kind that happen in
+                certain rooms and don't happen in others. AI Fellows is an
+                attempt to change that.
               </p>
               <p>
-                AI Fellows is my attempt to change that. Every week I review
-                your work the way a manager would. I tell you what's sharp, what
-                needs sharpening, and what a real business audience would think.
-                That feedback compounds.
+                Every week I review your work the way a manager would. I tell
+                you what is sharp, what needs sharpening, and what a real
+                business audience would think. That feedback compounds.
               </p>
             </div>
           </div>
@@ -244,15 +241,18 @@ export default function Home() {
             <h2 className="apply-title">Apply for Cohort 1</h2>
             <p className="apply-sub">
               Cohort 1 starts July 7, 2026. Two spots. Remote. Free.
-              The only requirement is commitment — show up every week, do the
+              The only requirement is commitment: show up every week, do the
               work, publish it.
             </p>
-            <a href="mailto:angshuman@ai-fellows.org?subject=AI Fellows — Cohort 1 Application&body=Name:%0ACollege:%0AMajor and year:%0AWhy you want this:%0AWhat you want to learn:" className="btn-primary">
+            <a
+              href="mailto:angshuman@ai-fellows.org?subject=AI Fellows Cohort 1 Application&body=Name:%0ACollege:%0AMajor and year:%0AWhy you want this:%0AWhat you want to learn:"
+              className="btn-primary"
+            >
               Send an application
             </a>
             <p className="apply-detail">
-              Email angshuman@ai-fellows.org with your name, college, major, year,
-              and one paragraph on why you want this. No resume required.
+              Email angshuman@ai-fellows.org with your name, college, major,
+              year, and one paragraph on why you want this. No resume required.
             </p>
           </div>
         </div>
