@@ -62,40 +62,40 @@ const outcomes = [
 
 const projects = [
   {
-    name: "SaasMatchup",
-    desc: "B2B SaaS comparison platform. 30+ category pages built on SEO and affiliate distribution.",
-    url: "https://saasmatchup.com",
-    tag: "Live",
-  },
-  {
-    name: "StackSignal",
-    desc: "Sales intelligence tool that turns a company name into a precision outreach brief using Apollo and Claude.",
-    url: "https://stacksignal-rust.vercel.app",
-    tag: "Live",
-  },
-  {
-    name: "Vantage",
-    desc: "AI marketing intelligence agent for brand marketers. Built on TapClicks' cross-account benchmark dataset.",
-    url: "https://vantage-ai-pi.vercel.app",
-    tag: "Live",
-  },
-  {
-    name: "Orino AI",
-    desc: "AI concierge for local service businesses. Handles inbound calls and bookings so owners stop losing jobs to missed calls.",
+    name: "Viao",
+    desc: "AI-powered suite for local service businesses: receptionist, call center, commerce, and marketing. Done-for-you, not do-it-yourself.",
     url: "https://orino-ai.vercel.app",
     tag: "Live",
   },
   {
+    name: "StackSignal",
+    desc: "Sales intelligence tool that turns a company name into a precision outreach brief. Built at the Apollo x Google Cloud Hackathon.",
+    url: "https://stacksignal-rust.vercel.app",
+    tag: "Live",
+  },
+  {
     name: "AgentLearn",
-    desc: "B2C learning platform where AI agents teach people how to use AI, personalized to their background and outcome.",
+    desc: "Learning platform where AI agents teach people how to use AI, personalized to their background and career outcome.",
     url: "https://porino-ai.vercel.app/learn",
     tag: "In progress",
   },
   {
-    name: "Leadgen Onboarding",
-    desc: "Outbound lead generation tool for consulting clients. Chains Apollo, Claude, and custom scoring into one workflow.",
-    url: "https://leadgen-onboarding.vercel.app",
-    tag: "Live",
+    name: "ObsGap",
+    desc: "AI observability auditor. Connect your GitHub and an agent scans your actual codebase for AI and ML observability gaps.",
+    url: "#",
+    tag: "Built",
+  },
+  {
+    name: "Blackmere",
+    desc: "Browser game for kids. Play a plague doctor in 1348. Every decision requires structured reasoning — not gut feel. Built with my son.",
+    url: "#",
+    tag: "Built",
+  },
+  {
+    name: "Leadgen System",
+    desc: "Client lead generation pipeline chaining Apollo, Claude, and custom scoring. Built for and validated with a real consulting client.",
+    url: "#",
+    tag: "Client work",
   },
 ];
 
