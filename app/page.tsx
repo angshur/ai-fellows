@@ -60,6 +60,84 @@ const outcomes = [
   },
 ];
 
+const projects = [
+  {
+    name: "SaasMatchup",
+    desc: "B2B SaaS comparison platform. 30+ category pages built on SEO and affiliate distribution.",
+    url: "https://saasmatchup.com",
+    tag: "Live",
+  },
+  {
+    name: "StackSignal",
+    desc: "Sales intelligence tool that turns a company name into a precision outreach brief using Apollo and Claude.",
+    url: "https://stacksignal-rust.vercel.app",
+    tag: "Live",
+  },
+  {
+    name: "Vantage",
+    desc: "AI marketing intelligence agent for brand marketers. Built on TapClicks' cross-account benchmark dataset.",
+    url: "https://vantage-ai-pi.vercel.app",
+    tag: "Live",
+  },
+  {
+    name: "Orino AI",
+    desc: "AI concierge for local service businesses. Handles inbound calls and bookings so owners stop losing jobs to missed calls.",
+    url: "https://orino-ai.vercel.app",
+    tag: "Live",
+  },
+  {
+    name: "AgentLearn",
+    desc: "B2C learning platform where AI agents teach people how to use AI, personalized to their background and outcome.",
+    url: "https://porino-ai.vercel.app/learn",
+    tag: "In progress",
+  },
+  {
+    name: "Leadgen Onboarding",
+    desc: "Outbound lead generation tool for consulting clients. Chains Apollo, Claude, and custom scoring into one workflow.",
+    url: "https://leadgen-onboarding.vercel.app",
+    tag: "Live",
+  },
+];
+
+const posts = [
+  {
+    title: "The Blast Radius Problem: Why Agent Governance Is Not a Prompt Engineering Problem",
+    url: "https://porino-ai.vercel.app/blog/blast-radius-agent-governance",
+    date: "Jun 2026",
+    mins: "10 min",
+  },
+  {
+    title: "Context Engineering Is Not Prompt Engineering: The Four Operations That Actually Matter",
+    url: "https://porino-ai.vercel.app/blog/context-engineering-four-operations",
+    date: "Jun 2026",
+    mins: "10 min",
+  },
+  {
+    title: "Workflows vs. Agents: The Decision Most Teams Get Wrong",
+    url: "https://porino-ai.vercel.app/blog/workflows-vs-agents",
+    date: "Jun 2026",
+    mins: "9 min",
+  },
+  {
+    title: "Determinism vs. Autonomy: The Architecture Decision Every AI Team Avoids",
+    url: "https://porino-ai.vercel.app/blog/ai-orchestration-determinism",
+    date: "Apr 2026",
+    mins: "10 min",
+  },
+  {
+    title: "5 AI Agents Your Marketing Team Can Start Building This Quarter",
+    url: "https://porino-ai.vercel.app/blog/ai-agents-for-marketing-teams",
+    date: "Apr 2026",
+    mins: "11 min",
+  },
+  {
+    title: "How to Organize Context for Agentic AI Systems",
+    url: "https://porino-ai.vercel.app/blog/organizing-context-for-agents",
+    date: "Apr 2026",
+    mins: "9 min",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -67,11 +145,10 @@ export default function Home() {
         <span className="nav-logo">AI Fellows</span>
         <div className="nav-links">
           <a href="#program" className="nav-link">Program</a>
+          <a href="#projects" className="nav-link">Projects</a>
+          <a href="#writing" className="nav-link">Writing</a>
           <a href="#mentor" className="nav-link">Mentor</a>
-          <a href="#apply" className="nav-link">Apply</a>
-          <a href="mailto:angshuman@ai-fellows.org" className="nav-cta">
-            Contact
-          </a>
+          <a href="#apply" className="nav-cta">Apply</a>
         </div>
       </nav>
 
@@ -181,6 +258,75 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Projects */}
+      <section className="section" id="projects">
+        <div className="section-inner">
+          <div className="section-header">
+            <div>
+              <h2 className="section-title">Projects</h2>
+              <p className="section-subtitle">
+                A selection of products, tools, and platforms built and shipped
+                by the program director across AI, SaaS, and data.
+              </p>
+            </div>
+          </div>
+          <div className="cards-grid">
+            {projects.map((p) => (
+              <a
+                key={p.name}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card"
+              >
+                <div className="card-top">
+                  <span className="card-title" style={{ marginBottom: 0 }}>{p.name}</span>
+                  <span className="card-badge">{p.tag}</span>
+                </div>
+                <p className="card-desc" style={{ marginTop: "10px" }}>{p.desc}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Writing */}
+      <section className="section" id="writing">
+        <div className="section-inner">
+          <div className="section-header">
+            <div>
+              <h2 className="section-title">Writing</h2>
+              <p className="section-subtitle">
+                Essays on agentic systems, AI infrastructure, and how practitioners
+                actually build with AI.
+              </p>
+            </div>
+            <a
+              href="https://porino-ai.vercel.app/blog"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="section-link"
+            >
+              All posts →
+            </a>
+          </div>
+          <div className="posts-list">
+            {posts.map((p) => (
+              <a
+                key={p.url}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="post-row"
+              >
+                <span className="post-title">{p.title}</span>
+                <span className="post-meta">{p.date} · {p.mins}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Mentor */}
       <section className="section" id="mentor">
         <div className="section-inner">
@@ -240,7 +386,7 @@ export default function Home() {
           <div className="apply-inner">
             <h2 className="apply-title">Apply for Cohort 1</h2>
             <p className="apply-sub">
-              Cohort 1 starts July 7, 2026. Two spots. Remote. Free.
+              Cohort 1 starts July 7, 2026. Limited spots. Remote. Free.
               The only requirement is commitment: show up every week, do the
               work, publish it.
             </p>
