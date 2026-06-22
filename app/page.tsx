@@ -1,3 +1,6 @@
+"use client";
+import { useState } from "react";
+
 const weeks = [
   {
     week: "Week 1",
@@ -61,49 +64,182 @@ const outcomes = [
 ];
 
 const projects = [
+  // Live
   {
     name: "Viao",
     desc: "AI-powered suite for local service businesses: receptionist, call center, commerce, and marketing. Done-for-you, not do-it-yourself.",
+    domain: "Local Business",
+    status: "Live",
     url: "https://orino-ai.vercel.app",
-    tag: "Live",
   },
   {
     name: "StackSignal",
-    desc: "Sales intelligence tool that turns a company name into a precision outreach brief. Built at the Apollo x Google Cloud Hackathon.",
+    desc: "Sales intelligence that turns a company name into a precision outreach brief using Apollo and Claude. Built at a hackathon.",
+    domain: "Sales Tech",
+    status: "Live",
     url: "https://stacksignal-rust.vercel.app",
-    tag: "Live",
   },
+  {
+    name: "SaasMatchup",
+    desc: "Three-sided marketplace for B2B SaaS stack decisions. Buyers get AI-powered recommendations, vendors get placement.",
+    domain: "B2B SaaS",
+    status: "Live",
+    url: "https://saasmatchup.com",
+  },
+  {
+    name: "Vantage",
+    desc: "AI marketing intelligence agent for brand marketers. Cross-account benchmarks from 10,000+ real accounts.",
+    domain: "MarTech",
+    status: "Live",
+    url: "https://vantage-ai-pi.vercel.app",
+  },
+  {
+    name: "Porino AI",
+    desc: "Infrastructure patterns library for teams building multi-agent AI systems. Written for practitioners, not demos.",
+    domain: "AI Infra",
+    status: "Live",
+    url: "https://porino-ai.vercel.app",
+  },
+  // Building
   {
     name: "AgentLearn",
     desc: "Learning platform where AI agents teach people how to use AI, personalized to their background and career outcome.",
+    domain: "EdTech",
+    status: "Building",
     url: "https://porino-ai.vercel.app/learn",
-    tag: "In progress",
-  },
-  {
-    name: "ObsGap",
-    desc: "AI observability auditor. Connect your GitHub and an agent scans your actual codebase for AI and ML observability gaps.",
-    url: "#",
-    tag: "Built",
-  },
-  {
-    name: "Blackmere",
-    desc: "Browser game for kids. Play a plague doctor in 1348. Every decision requires structured reasoning — not gut feel. Built with my son.",
-    url: "#",
-    tag: "Built",
-  },
-  {
-    name: "Leadgen System",
-    desc: "Client lead generation pipeline chaining Apollo, Claude, and custom scoring. Built for and validated with a real consulting client.",
-    url: "#",
-    tag: "Client work",
   },
   {
     name: "Reflex",
-    desc: "A passive learning system that watches what you consume and turns it into targeted practice for the skills you are building. Install the Chrome extension. It handles the rest.",
+    desc: "Passive learning system that watches what you consume and turns it into targeted practice for the skills you are building.",
+    domain: "Consumer",
+    status: "Building",
     url: "#",
-    tag: "In progress",
+  },
+  {
+    name: "Threshold",
+    desc: "Mentorship initiative connecting Indian diaspora professionals with students in tier-3 cities in India aged 15-22.",
+    domain: "Nonprofit",
+    status: "Building",
+    url: "#",
+  },
+  {
+    name: "AI Fellows",
+    desc: "This program. Industry fellowship connecting practitioners with ambitious students outside the standard pipeline.",
+    domain: "Nonprofit",
+    status: "Building",
+    url: "#",
+  },
+  // Built
+  {
+    name: "ObsGap",
+    desc: "AI observability auditor. Connect your GitHub and an agent scans your actual codebase for AI and ML observability gaps.",
+    domain: "Dev Tools",
+    status: "Built",
+    url: "#",
+  },
+  {
+    name: "Blackmere",
+    desc: "Browser game for kids. Play a plague doctor in 1348. Every decision requires structured reasoning, not gut feel.",
+    domain: "Gaming",
+    status: "Built",
+    url: "#",
+  },
+  {
+    name: "Leadgen System",
+    desc: "Outbound lead generation pipeline chaining Apollo, Claude, and custom scoring. Validated with a real consulting client.",
+    domain: "Sales Tech",
+    status: "Built",
+    url: "#",
+  },
+  // Ideas
+  {
+    name: "Model Router",
+    desc: "Smart API proxy that routes AI requests to the right model by cost, speed, and quality. BYOK, no config needed.",
+    domain: "AI Infra",
+    status: "Idea",
+    url: "#",
+  },
+  {
+    name: "India Influence Platform",
+    desc: "Two-sided marketplace connecting Indian micro-influencers and regional athletes with brands and sponsors.",
+    domain: "Marketplace",
+    status: "Idea",
+    url: "#",
+  },
+  {
+    name: "Crowd Capital",
+    desc: "Community-powered funding platform for early-stage startups. AI evaluates the opportunity, crowd backs the founder.",
+    domain: "Fintech",
+    status: "Idea",
+    url: "#",
+  },
+  {
+    name: "Tycoon US",
+    desc: "Platform that lets solo founders run a one-person company by delegating operations to an AI CEO.",
+    domain: "AI Ops",
+    status: "Idea",
+    url: "#",
+  },
+  {
+    name: "Figcareer",
+    desc: "AI-powered career roadmap generator for Gen Z. Input your skills and aspirations, get a personalized path forward.",
+    domain: "Career Tech",
+    status: "Idea",
+    url: "#",
+  },
+  {
+    name: "Runway",
+    desc: "Real-time job discovery platform for college students. Scrapes fresh listings, surfaces roles before they hit LinkedIn.",
+    domain: "Career Tech",
+    status: "Idea",
+    url: "#",
+  },
+  {
+    name: "Structured Speech Coach",
+    desc: "Communication coaching for non-native English speakers in US corporate settings. AI feedback on structure and fluency.",
+    domain: "EdTech",
+    status: "Idea",
+    url: "#",
+  },
+  {
+    name: "Agent Studio",
+    desc: "Done-for-you AI ops layer for solopreneurs: course sellers, newsletter writers, Shopify merchants. BYOK, $19/mo.",
+    domain: "AI Ops",
+    status: "Idea",
+    url: "#",
+  },
+  {
+    name: "UTM Governance",
+    desc: "UTM parameter management and enforcement for marketing agencies. Consistent tracking across all campaigns.",
+    domain: "MarTech",
+    status: "Idea",
+    url: "#",
+  },
+  {
+    name: "Vela / Entrepreneur OS",
+    desc: "VC evaluation platform that gives founders a structured investment decision in minutes using the same framework VCs use.",
+    domain: "Fintech",
+    status: "Idea",
+    url: "#",
+  },
+  {
+    name: "Workspace Add-ons",
+    desc: "Portfolio of small, focused Google Workspace add-ons that automate repetitive tasks for business teams.",
+    domain: "Productivity",
+    status: "Idea",
+    url: "#",
+  },
+  {
+    name: "Paar",
+    desc: "Community platform for digitizing, translating, and preserving Bengali literature. Starting with Jokher Dhan.",
+    domain: "Culture",
+    status: "Idea",
+    url: "#",
   },
 ];
+
+const DOMAINS = ["All", "AI Infra", "AI Ops", "B2B SaaS", "Career Tech", "Consumer", "Culture", "Dev Tools", "EdTech", "Fintech", "Gaming", "Local Business", "MarTech", "Marketplace", "Nonprofit", "Productivity", "Sales Tech"];
+const STATUSES = ["All", "Live", "Building", "Built", "Idea"];
 
 const posts = [
   {
@@ -144,7 +280,23 @@ const posts = [
   },
 ];
 
+const statusColor: Record<string, string> = {
+  Live: "#4caf7d",
+  Building: "#5e6ad2",
+  Built: "#8a8a8a",
+  Idea: "#555555",
+};
+
 export default function Home() {
+  const [domain, setDomain] = useState("All");
+  const [status, setStatus] = useState("All");
+
+  const filtered = projects.filter((p) => {
+    const domainMatch = domain === "All" || p.domain === domain;
+    const statusMatch = status === "All" || p.status === status;
+    return domainMatch && statusMatch;
+  });
+
   return (
     <>
       <nav className="nav">
@@ -271,27 +423,64 @@ export default function Home() {
             <div>
               <h2 className="section-title">Projects</h2>
               <p className="section-subtitle">
-                A selection of products, tools, and platforms built and shipped
-                by the program director across AI, SaaS, and data.
+                Ideas, products, and tools across AI, SaaS, marketplaces, and
+                education. Fellows pick one as their case study and run with it.
               </p>
             </div>
+            <span className="project-count">{filtered.length} projects</span>
           </div>
-          <div className="cards-grid">
-            {projects.map((p) => (
-              <a
-                key={p.name}
-                href={p.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="card"
-              >
-                <div className="card-top">
-                  <span className="card-title" style={{ marginBottom: 0 }}>{p.name}</span>
-                  <span className="card-badge">{p.tag}</span>
-                </div>
-                <p className="card-desc" style={{ marginTop: "10px" }}>{p.desc}</p>
-              </a>
-            ))}
+
+          {/* Filters */}
+          <div className="filter-row">
+            <div className="filter-group">
+              {STATUSES.map((s) => (
+                <button
+                  key={s}
+                  onClick={() => setStatus(s)}
+                  className={`filter-btn ${status === s ? "active" : ""}`}
+                >
+                  {s}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="filter-row" style={{ marginTop: "8px" }}>
+            <div className="filter-group filter-domains">
+              {DOMAINS.map((d) => (
+                <button
+                  key={d}
+                  onClick={() => setDomain(d)}
+                  className={`filter-btn ${domain === d ? "active" : ""}`}
+                >
+                  {d}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Grid */}
+          <div className="projects-grid">
+            {filtered.map((p) => {
+              const Tag = p.url !== "#" ? "a" : "div";
+              const linkProps = p.url !== "#"
+                ? { href: p.url, target: "_blank", rel: "noopener noreferrer" }
+                : {};
+              return (
+                <Tag key={p.name} className={`project-card ${p.url !== "#" ? "project-card-link" : ""}`} {...linkProps}>
+                  <div className="project-card-top">
+                    <span className="project-name">{p.name}</span>
+                    <span
+                      className="project-status"
+                      style={{ color: statusColor[p.status] }}
+                    >
+                      {p.status}
+                    </span>
+                  </div>
+                  <p className="project-desc">{p.desc}</p>
+                  <span className="project-domain">{p.domain}</span>
+                </Tag>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -303,8 +492,8 @@ export default function Home() {
             <div>
               <h2 className="section-title">Writing</h2>
               <p className="section-subtitle">
-                Essays on agentic systems, AI infrastructure, and how practitioners
-                actually build with AI.
+                Essays on agentic systems, AI infrastructure, and how
+                practitioners actually build with AI.
               </p>
             </div>
             <a
