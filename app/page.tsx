@@ -97,6 +97,12 @@ const projects = [
     url: "#",
     tag: "Client work",
   },
+  {
+    name: "Reflex",
+    desc: "A passive learning system that watches what you consume and turns it into targeted practice for the skills you are building. Install the Chrome extension. It handles the rest.",
+    url: "#",
+    tag: "In progress",
+  },
 ];
 
 const posts = [
