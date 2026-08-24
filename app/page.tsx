@@ -239,7 +239,6 @@ const projects = [
 ];
 
 const DOMAINS = ["All", "AI Infra", "AI Ops", "B2B SaaS", "Career Tech", "Consumer", "Culture", "Dev Tools", "EdTech", "Fintech", "Gaming", "Local Business", "MarTech", "Marketplace", "Nonprofit", "Productivity", "Sales Tech"];
-const STATUSES = ["All", "Live", "Building", "Built", "Idea"];
 
 const posts = [
   {
@@ -280,22 +279,12 @@ const posts = [
   },
 ];
 
-const statusColor: Record<string, string> = {
-  Live: "#4caf7d",
-  Building: "#5e6ad2",
-  Built: "#8a8a8a",
-  Idea: "#555555",
-};
-
 export default function Home() {
   const [domain, setDomain] = useState("All");
-  const [status, setStatus] = useState("All");
 
-  const filtered = projects.filter((p) => {
-    const domainMatch = domain === "All" || p.domain === domain;
-    const statusMatch = status === "All" || p.status === status;
-    return domainMatch && statusMatch;
-  });
+  const filtered = projects.filter((p) =>
+    domain === "All" || p.domain === domain
+  );
 
   return (
     <>
